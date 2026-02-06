@@ -474,8 +474,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 📞 Support
 
-- 📧 Email: support@sentinelagent.local
-- 💬 Discord: [Join our server](https://discord.gg/sentinelagent)
+- 📧 Email: azeimily2001@gmail.com
 - 🐛 Issues: [GitHub Issues](https://github.com/ABDERRAZZAK-IMILY/SentinelAgent/issues)
 
 ---
