@@ -1,0 +1,28 @@
+{
+  "serverUrl": "http://localhost:8080",
+  "agentId": "",
+  "apiKey": "",
+  "kafkaBroker": "localhost:9092",
+  "kafkaTopic": "telemetry",
+  "collection": {
+    "metricsIntervalSeconds": 10,
+    "heartbeatIntervalSeconds": 30,
+    "processesLimit": 50,
+    "networkConnectionsLimit": 100,
+    "enableNetworkSpeed": true,
+    "enableDetailedProcesses": true
+  },
+  "security": {
+    "tlsEnabled": false,
+    "tlsSkipVerify": false,
+    "certPath": "",
+    "keyPath": ""
+  },
+  "logging": {
+    "level": "info",
+    "filePath": "sentinelagent.log",
+    "maxSizeMB": 100,
+    "maxBackups": 5,
+    "maxAgeDays": 30
+  }
+}

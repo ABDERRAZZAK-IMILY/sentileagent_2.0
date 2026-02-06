@@ -1,0 +1,12 @@
+# ============================================
+# SentinelAgent Kubernetes Namespace
+# ============================================
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sentinelagent
+  labels:
+    name: sentinelagent
+    app.kubernetes.io/name: sentinelagent
+    app.kubernetes.io/component: namespace

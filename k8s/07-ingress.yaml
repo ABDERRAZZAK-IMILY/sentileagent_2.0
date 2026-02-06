@@ -1,0 +1,71 @@
+# ============================================
+# SentinelAgent Kubernetes Ingress
+# ============================================
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sentinel-ingress
+  namespace: sentinelagent
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - sentinelagent.example.com
+        - api.sentinelagent.example.com
+      secretName: sentinel-tls
+  rules:
+    - host: sentinelagent.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
+    - host: api.sentinelagent.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 8080
+---
+# Alternative: Simple ingress without TLS (for local testing)
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: sentinel-ingress-local
+#   namespace: sentinelagent
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#     - host: sentinelagent.local
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: frontend
+#                 port:
+#                   number: 80
+#           - path: /api
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: backend
+#                 port:
+#                   number: 8080

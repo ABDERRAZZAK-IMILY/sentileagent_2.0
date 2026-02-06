@@ -1,0 +1,95 @@
+# ============================================
+# SentinelAgent .gitignore
+# ============================================
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Data directories
+data/
+logs/
+backups/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Backend (Java/Maven)
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/!.mvn/wrapper/maven-wrapper.properties
+backend/!**/src/main/**/target/
+backend/!**/src/test/**/target/
+backend/*.class
+backend/*.log
+
+# Frontend (Node/Angular)
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+frontend/.sass-cache/
+frontend/connect.lock
+frontend/libpeerconnection.log
+frontend/typings/
+
+# Agent (Go)
+agentTopic/sentinel-agent
+agentTopic/*.exe
+agentTopic/*.dll
+agentTopic/*.so
+agentTopic/*.dylib
+agentTopic/*.test
+agentTopic/*.out
+agentTopic/vendor/
+
+# Iris Service (Python)
+iris_service/__pycache__/
+iris_service/*.py[cod]
+iris_service/*$py.class
+iris_service/*.so
+iris_service/.Python
+iris_service/env/
+iris_service/venv/
+iris_service/ENV/
+iris_service/*.egg-info/
+iris_service/.installed.cfg
+iris_service/*.egg
+iris_service/*.manifest
+iris_service/*.spec
+iris_service/pip-log.txt
+iris_service/pip-delete-this-directory.txt
+
+# AI (Python/Jupyter)
+AI/.ipynb_checkpoints/
+AI/__pycache__/
+AI/*.pyc
+AI/.env
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Kubernetes
+k8s/secrets.yaml
+
+# Certificates
+*.pem
+*.key
+*.crt
+*.p12
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# OS files
+Thumbs.db
